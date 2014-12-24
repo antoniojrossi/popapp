@@ -10,6 +10,7 @@
 		F047C1E01A4739FD001D7173 /* PopApp.h in Headers */ = {isa = PBXBuildFile; fileRef = F047C1DF1A4739FD001D7173 /* PopApp.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		F047C1E61A4739FD001D7173 /* PopApp.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F047C1DA1A4739FD001D7173 /* PopApp.framework */; };
 		F047C1ED1A4739FD001D7173 /* PopAppTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = F047C1EC1A4739FD001D7173 /* PopAppTests.swift */; };
+		F047C1F71A4AC27B001D7173 /* PopApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = F047C1F61A4AC27B001D7173 /* PopApp.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -29,6 +30,7 @@
 		F047C1E51A4739FD001D7173 /* PopAppTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = PopAppTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		F047C1EB1A4739FD001D7173 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		F047C1EC1A4739FD001D7173 /* PopAppTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PopAppTests.swift; sourceTree = "<group>"; };
+		F047C1F61A4AC27B001D7173 /* PopApp.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PopApp.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -71,6 +73,7 @@
 		F047C1DC1A4739FD001D7173 /* PopApp */ = {
 			isa = PBXGroup;
 			children = (
+				F047C1F61A4AC27B001D7173 /* PopApp.swift */,
 				F047C1DF1A4739FD001D7173 /* PopApp.h */,
 				F047C1DD1A4739FD001D7173 /* Supporting Files */,
 			);
@@ -209,6 +212,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				F047C1F71A4AC27B001D7173 /* PopApp.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -315,6 +319,7 @@
 		F047C1F11A4739FD001D7173 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				CLANG_ENABLE_MODULES = YES;
 				COMBINE_HIDPI_IMAGES = YES;
 				DEFINES_MODULE = YES;
 				DYLIB_COMPATIBILITY_VERSION = 1;
@@ -326,12 +331,14 @@
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks @loader_path/Frameworks";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SKIP_INSTALL = YES;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 			};
 			name = Debug;
 		};
 		F047C1F21A4739FD001D7173 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				CLANG_ENABLE_MODULES = YES;
 				COMBINE_HIDPI_IMAGES = YES;
 				DEFINES_MODULE = YES;
 				DYLIB_COMPATIBILITY_VERSION = 1;
