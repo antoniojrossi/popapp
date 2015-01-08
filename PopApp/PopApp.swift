@@ -19,12 +19,9 @@ public class PopApp: NSObject {
     }
     
     public init(icon: NSImage) {
-        icon.setTemplate(true)
         self.statusBarItem = NSStatusBar.systemStatusBar().statusItemWithLength(-2)
-        self.statusBarItem.button?.image = icon
         super.init()
-        self.statusBarItem.target = self
-        self.statusBarItem.action = "clicked"
+        setupStatusBarItemWith(icon)
         self.popover.behavior = NSPopoverBehavior.Transient
     }
     
@@ -40,4 +37,12 @@ public class PopApp: NSObject {
             popover.showRelativeToRect(button.frame, ofView: button, preferredEdge:1)
         }
     }
+    
+    func setupStatusBarItemWith(icon: NSImage) {
+        icon.setTemplate(true)
+        self.statusBarItem.button?.image = icon
+        self.statusBarItem.target = self
+        self.statusBarItem.action = "clicked"
+    }
+    
 }
