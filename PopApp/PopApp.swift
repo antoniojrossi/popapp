@@ -25,6 +25,16 @@ public class PopApp: NSObject {
         self.popover.behavior = NSPopoverBehavior.Transient
     }
     
+    public func disable() {
+        self.statusBarItem.button?.appearsDisabled = true
+        self.statusBarItem.button?.enabled = false
+    }
+    
+    public func enable() {
+        self.statusBarItem.button?.appearsDisabled = false
+        self.statusBarItem.button?.enabled = true
+    }
+    
     func clicked() {
         if popover.contentViewController != nil {
             show()
