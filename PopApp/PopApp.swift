@@ -8,10 +8,13 @@
 
 import Cocoa
 
-public class PopApp: NSObject {
+public typealias Closure = () -> ()
+
+public class PopApp: NSObject, NSPopoverDelegate {
    
     let statusBarItem: NSStatusItem
-    let popover: NSPopover = NSPopover()
+    let popover = NSPopover()
+    let delegate = PopoverDelegate()
     public var viewController: NSViewController? {
         didSet{
             self.popover.contentViewController = viewController
@@ -23,6 +26,7 @@ public class PopApp: NSObject {
         super.init()
         setupStatusBarItemWith(icon)
         self.popover.behavior = NSPopoverBehavior.Transient
+        self.popover.delegate = self.delegate
     }
     
     public func disable() {
@@ -33,6 +37,22 @@ public class PopApp: NSObject {
     public func enable() {
         self.statusBarItem.button?.appearsDisabled = false
         self.statusBarItem.button?.enabled = true
+    }
+    
+    public func willShow(closure: Closure) {
+        self.delegate.willShowClosure = closure
+    }
+    
+    public func didShow(closure: Closure) {
+        self.delegate.didShowClosure = closure
+    }
+    
+    public func willClose(closure: Closure) {
+        self.delegate.willCloseClosure = closure
+    }
+    
+    public func didClose(closure: Closure) {
+        self.delegate.didCloseClosure = closure
     }
     
     func clicked() {

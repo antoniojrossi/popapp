@@ -11,6 +11,7 @@
 		F047C1E61A4739FD001D7173 /* PopApp.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F047C1DA1A4739FD001D7173 /* PopApp.framework */; };
 		F047C1ED1A4739FD001D7173 /* PopAppTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = F047C1EC1A4739FD001D7173 /* PopAppTests.swift */; };
 		F047C1F71A4AC27B001D7173 /* PopApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = F047C1F61A4AC27B001D7173 /* PopApp.swift */; };
+		F05C54B91A719DEE0065167E /* PopoverDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = F05C54B81A719DEE0065167E /* PopoverDelegate.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -31,6 +32,7 @@
 		F047C1EB1A4739FD001D7173 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		F047C1EC1A4739FD001D7173 /* PopAppTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PopAppTests.swift; sourceTree = "<group>"; };
 		F047C1F61A4AC27B001D7173 /* PopApp.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PopApp.swift; sourceTree = "<group>"; };
+		F05C54B81A719DEE0065167E /* PopoverDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PopoverDelegate.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -74,6 +76,7 @@
 			isa = PBXGroup;
 			children = (
 				F047C1F61A4AC27B001D7173 /* PopApp.swift */,
+				F05C54B81A719DEE0065167E /* PopoverDelegate.swift */,
 				F047C1DF1A4739FD001D7173 /* PopApp.h */,
 				F047C1DD1A4739FD001D7173 /* Supporting Files */,
 			);
@@ -212,6 +215,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				F05C54B91A719DEE0065167E /* PopoverDelegate.swift in Sources */,
 				F047C1F71A4AC27B001D7173 /* PopApp.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -404,6 +408,7 @@
 				F047C1F21A4739FD001D7173 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		F047C1F31A4739FD001D7173 /* Build configuration list for PBXNativeTarget "PopAppTests" */ = {
 			isa = XCConfigurationList;
@@ -412,6 +417,7 @@
 				F047C1F51A4739FD001D7173 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
