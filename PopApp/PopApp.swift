@@ -15,6 +15,15 @@ public class PopApp: NSObject, NSPopoverDelegate {
     let statusBarItem: NSStatusItem
     let popover = NSPopover()
     let delegate = PopoverDelegate()
+    public var isVisible: Bool {
+        return popover.shown
+    }
+    public var isEnabled: Bool {
+        if let buttonStatus = self.statusBarItem.button?.enabled {
+            return buttonStatus
+        }
+        return false
+    }
     public var viewController: NSViewController? {
         didSet{
             self.popover.contentViewController = viewController
@@ -56,8 +65,10 @@ public class PopApp: NSObject, NSPopoverDelegate {
     }
     
     func clicked() {
-        if popover.contentViewController != nil {
-            show()
+        if !popover.shown {
+            if popover.contentViewController != nil {
+                show()
+            }
         }
     }
     
