@@ -15,6 +15,7 @@ public class PopApp: NSObject, NSPopoverDelegate {
     let statusBarItem: NSStatusItem
     let popover = NSPopover()
     let delegate = PopoverDelegate()
+    var popoverTransiencyMonitor: NSEvent?
     public var isVisible: Bool {
         return popover.shown
     }
@@ -65,16 +66,21 @@ public class PopApp: NSObject, NSPopoverDelegate {
     }
     
     func clicked() {
-        if !popover.shown {
-            if popover.contentViewController != nil {
-                show()
-            }
+        show()
+        if self.popoverTransiencyMonitor == nil {
+            self.popoverTransiencyMonitor = NSEvent.addGlobalMonitorForEventsMatchingMask(NSEventMask.LeftMouseDownMask | NSEventMask.RightMouseDownMask) { event in
+                if self.popoverTransiencyMonitor != nil {
+                    NSEvent.removeMonitor(self.popoverTransiencyMonitor!)
+                    self.popoverTransiencyMonitor = nil;
+                }
+                self.popover.close()
+            } as? NSEvent
         }
     }
     
     func show() {
         NSApplication.sharedApplication().activateIgnoringOtherApps(true)
-        if let button = statusBarItem.button{
+        if let button = statusBarItem.button {
             popover.showRelativeToRect(button.frame, ofView: button, preferredEdge:1)
         }
     }
